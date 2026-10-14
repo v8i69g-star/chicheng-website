@@ -1,0 +1,24 @@
+/* CCI site overrides (added after the WordPress export) */
+
+/* Header: every page carries its own copy of the Elementor header row
+   (logo | menu | social icons). Keep all menu items on one line so
+   結構集成材專家系統 sits at the far right instead of wrapping below. */
+@media (min-width: 1200px) {
+  .e-con-inner:has(> .e-con > .elementor-widget-nav-menu) > .e-con:first-child {
+    width: 200px !important; --width: 200px; flex: 0 0 200px !important;
+  }
+  .e-con-inner:has(> .e-con > .elementor-widget-nav-menu) > .e-con:last-child:not(:has(> .elementor-widget-nav-menu)) {
+    width: max-content !important; --width: auto; flex: 0 0 auto !important;
+  }
+  .e-con-inner > .e-con:has(> .elementor-widget-nav-menu) {
+    width: auto !important; --width: auto; flex: 1 1 0 !important; min-width: 0;
+  }
+  .e-con-inner > .e-con > .elementor-widget-nav-menu {
+    width: 100% !important; --container-widget-width: 100%; max-width: 100% !important;
+  }
+  .elementor-nav-menu--layout-horizontal > .elementor-nav-menu { flex-wrap: nowrap !important; }
+  .elementor-nav-menu--layout-horizontal > .elementor-nav-menu > li > a { white-space: nowrap; }
+}
+
+/* Images: show immediately instead of waiting for entrance animations */
+.elementor-invisible { visibility: visible !important; }
